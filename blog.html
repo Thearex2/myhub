@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyHub – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --card: #161b22;
+      --accent: #58a6ff;
+      --button: #238636;
+      --footer: #8b949e;
+    }
+
+    body.light {
+      --bg: #ffffff;
+      --text: #24292e;
+      --card: #f6f8fa;
+      --accent: #0969da;
+      --button: #2da44e;
+      --footer: #6e7781;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background-color: var(--card);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text);
+      margin-left: 1.5rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 0;
+      top: 0;
+      left: 0;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      color: var(--footer);
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .skills, .projects {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .btn {
+      background: var(--button);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #2ea043;
+    }
+
+    footer {
+      background: var(--card);
+      text-align: center;
+      padding: 2rem;
+      color: var(--footer);
+    }
+
+    .social-icons a {
+      color: var(--footer);
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <header>
+    <div class="logo">MyHub</div>
+    <nav>
+      <a href="#skills">Osaaminen</a>
+      <a href="#projects">Projektit</a>
+      <button class="theme-toggle" id="themeToggle" title="Vaihda teema">🌓</button>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>MyHubin blogi 👋</h1>
+    <p>Katsele artikkeleita <a href="artikkelit.html">täällä</a>.</p>
+  </div>
+
+  <section class="section" id="skills">
+    <h2 class="section-title">Osaaminen</h2>
+    <div class="skills">
+      <div class="card"><i class="fab fa-html5"></i><br />HTML5</div>
+      <div class="card"><i class="fab fa-css3-alt"></i><br />CSS3</div>
+      <div class="card"><i class="fab fa-js-square"></i><br />JavaScript</div>
+      <div class="card"><i class="fab fa-react"></i><br />React</div>
+      <div class="card"><i class="fab fa-node"></i><br />Node.js</div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-title">Projektit</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>🚀 Portfolio-sivu</h3>
+        <p>Responsiivinen henkilökohtainen portfolio modernilla tyylillä.</p>
+        <a class="btn" href="https://github.com/kayttaja/portfolio" target="_blank">Katso GitHubissa</a>
+      </div>
+      <div class="card">
+        <h3>📦 Projektihallinta</h3>
+        <p>Simppeli task manager Reactilla ja Firebase-taustalla.</p>
+        <a class="btn" href="https://github.com/kayttaja/project-tool" target="_blank">Katso GitHubissa</a>
+      </div>
+      <div class="card">
+        <h3>🤖 AI-botti</h3>
+        <p>Älykäs botti joka vastaa kysymyksiin OpenAI:n avulla.</p>
+        <a class="btn" href="https://github.com/kayttaja/ai-bot" target="_blank">Katso GitHubissa</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 MyHub – Koodattu rakkaudella 💻</p>
+    <div class="social-icons">
+      <a href="https://github.com/kayttaja" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/kayttaja" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#58a6ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1.5 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#58a6ff",
+          opacity: 0.2,
+          width: 1
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "
