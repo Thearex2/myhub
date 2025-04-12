@@ -1,1 +1,180 @@
 
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel |MyHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --text-color: #c9d1d9;
+      --card-bg: #161b22;
+      --accent: #58a6ff;
+      --success: #2ea043;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Fira Code', monospace;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #161b22;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      flex-grow: 1;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .console {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .console-output {
+      flex-grow: 1;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 5px;
+      padding: 1rem;
+      font-size: 0.9rem;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      margin-bottom: 1rem;
+    }
+
+    .console-input {
+      display: flex;
+    }
+
+    .console-input input {
+      flex-grow: 1;
+      padding: 0.5rem;
+      background: #161b22;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      color: var(--text-color);
+    }
+
+    .console-input button {
+      background: var(--success);
+      border: none;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      background: #161b22;
+      color: #8b949e;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🛠️ MyHub Admin-paneeli
+  </header>
+
+  <main>
+    <div class="card">
+      <h3>Yleiskatsaus</h3>
+      <p>👤 Käyttäjiä: 1</p>
+      <p>📝 Postauksia: 0</p>
+      <p>📦 Tallennettua dataa: 2.3MB</p>
+    </div>
+
+    <div class="card console">
+      <h3>🖥️ Konsoli</h3>
+      <div class="console-output" id="console-output">> Konsoli valmis vastaanottamaan komentoja...</div>
+      <div class="console-input">
+        <input type="text" id="console-input" placeholder="Kirjoita komento ja paina Enter..." />
+        <button onclick="runCommand()">Suorita</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 MyHub | Powered by TCBlooper
+  </footer>
+
+  <script>
+    const output = document.getElementById('console-output');
+    const input = document.getElementById('console-input');
+
+    function runCommand() {
+      const cmd = input.value.trim();
+      if (cmd === '') return;
+
+      output.textContent += `\n> ${cmd}`;
+
+      let response = '';
+      switch (cmd.toLowerCase()) {
+        case 'help':
+          response = 'Komennot: help, status, clear';
+          break;
+        case 'status':
+          response = 'Serveri toimii normaalisti. Kaikki järjestelmät OK.';
+          break;
+        case 'clear':
+          output.textContent = '> Konsoli tyhjennetty.';
+          input.value = '';
+          return;
+        case 'server':
+          response = 'Serverin tila OK. 2.3MB käytetty serverin tilasta.';
+          break;
+        default:
+          response = `Komentoa ${cmd} ei tunnistettu. Jos olet aivan varma. että komento on oikein, katso "help" komennosta komennot ja jos sielä on komento ${cmd}, ota yhteyttä Karkkiin.`;
+      }
+
+      output.textContent += `\n${response}`;
+      input.value = '';
+      output.scrollTop = output.scrollHeight;
+    }
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        runCommand();
+      }
+    });
+  </script>
+</body>
+</html>
