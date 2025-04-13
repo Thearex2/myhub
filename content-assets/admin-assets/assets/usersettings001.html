@@ -1,21 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyHub | User settings for admins</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://thearex2.github.io/assets/images/myhub.ico">
+  <title>MyHub Admin Status</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+   <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://thearex2.github.io/myhub/assets/images/myhub.ico">
 
   <!-- Open Graph Metadata -->
-  <meta property="og:site_name" content="MyHub Admin">
-  <meta property="og:title" content="MyHub | User settings for admins">
+  <meta property="og:site_name" content="MyHub">
+  <meta property="og:title" content="MyHub | User settings (Admin version)">
   <meta property="og:image" content="https://thearex2.github.io/myhub/assets/images/myhub.ico">
-  <meta property="og:description" content="Don't share this link to anyone. If they click this link, they can edit MyHub's files!">
+  <meta property="og:description" content="If you share this link, anyone can edit MyHub's files.">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
   <style>
     :root {
       --bg-color: #0d1117;
@@ -70,4 +71,54 @@
     }
   </style>
 </head>
+<body>
 
+  <h1>📊 Admin Status Overview</h1>
+
+  <div class="status-grid">
+    <div class="status-card">
+      <h3>User Info</h3>
+      <ul>
+        <li>Name: admin</li>
+        <li>Email: admin@myhub.com</li>
+        <li>Password: admin12</li>
+        <li>Role: <span class="highlight">Administrator</span></li>
+        <li>Logged In: Yes</li>
+        <li>Registered: 2025-11-4</li>
+      </ul>
+    </div>
+
+    <div class="status-card">
+      <h3>Saved Projects</h3>
+      <ul>
+        <li>MyHub Blog</li>
+        <li>MyGPT AI Demo</li>
+        <li>https://github.com/Thearex2/myhub</li>
+        <li>Fonts</li>
+      </ul>
+    </div>
+
+    <div class="status-card">
+      <h3>Blog Posts</h3>
+      <ul>
+        <li>📝 "The Future of AI" (Draft)</li>
+        <li>📝 "MyHub Dev Diary" (Draft)</li>
+      </ul>
+    </div>
+
+    <div class="status-card">
+      <h3>Server Status</h3>
+      <ul>
+        <li>CPU Load: 23%</li>
+        <li>Memory: 2.3MB</li>
+        <li>Data Usage: 2.3 MB</li>
+        <li>Status: <span class="highlight">✅ Active</span></li>
+      </ul>
+    </div>
+  </div>
+<div class="coding-info">
+  <address>Coded lovely by Karkkii</address>
+  <p>MyHub</p>
+</div>
+</body>
+</html>
