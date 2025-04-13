@@ -122,6 +122,9 @@
       <p>📦 Tallennettua dataa: 2.3MB</p>
       <p>💎 Viimeisen tunnin aikana tulleet postaukset: 0.0MB</p>
       <p>📜 Käyttäjien tila: 0.1MB</p>
+      <p> </p>
+      <button onclick="stopServer()">🚫 Sulje serverit</button>
+      <button onclick="moveAdmin()">📜 Tarkistele käyttäjien tilaa</button>
     </div>
 
     <div class="card console">
@@ -151,7 +154,7 @@
       let response = '';
       switch (cmd.toLowerCase()) {
         case 'help':
-          response = 'Komennot: help, status, clear';
+          response = 'Komennot: help, status, clear, server';
           break;
         case 'status':
           response = 'Serveri toimii normaalisti. Kaikki järjestelmät OK.';
@@ -178,5 +181,16 @@
       }
     });
   </script>
+<script>
+    function moveAdmin() {
+        window.location.href="usersettings001.html"
+        console.warn("If you move to usersettings.html, report it now to karkkii12 in Discord! usersettings001.html is the right one.")
+    }
+    function stopServer() {
+        console.error("The panel servers has been closed. (Error code -032425069696969)")
+        window.location.href="about:blank"
+    }
+    
+</script>
 </body>
 </html>
