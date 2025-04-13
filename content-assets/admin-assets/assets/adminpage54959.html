@@ -154,20 +154,20 @@
       let response = '';
       switch (cmd.toLowerCase()) {
         case 'help':
-          response = 'Komennot: help, status, clear, server';
+          response = 'Commands: help, status, clear, server, infofi';
           break;
         case 'status':
-          response = 'Serveri toimii normaalisti. Kaikki järjestelmät OK.';
+          response = 'Server is normal. All is okay!';
           break;
         case 'clear':
-          output.textContent = '> Konsoli tyhjennetty.';
+          output.textContent = '> Console cleared..';
           input.value = '';
           return;
-        case 'server':
-          response = 'Serverin tila OK. 2.3MB käytetty serverin tilasta.';
+        case 'infofi':
+          response = 'Tällä hetkellä vastaukset simuloidaan.';
           break;
         default:
-          response = `Komentoa ${cmd} ei tunnistettu. Jos olet aivan varma. että komento on oikein, katso "help" komennosta komennot ja jos sielä on komento ${cmd}, ota yhteyttä Karkkiin.`;
+          response = `Command ${cmd} is not an option.`;
       }
 
       output.textContent += `\n${response}`;
