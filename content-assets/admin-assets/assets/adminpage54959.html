@@ -111,28 +111,28 @@
 </head>
 <body>
   <header>
-    🛠️ MyHub Admin-paneeli
+    🛠️ MyHub Admin-panel
   </header>
 
   <main>
     <div class="card">
-      <h3>Yleiskatsaus</h3>
-      <p>👤 Käyttäjiä: 1</p>
-      <p>📝 Postauksia: 0</p>
-      <p>📦 Tallennettua dataa: 2.3MB</p>
-      <p>💎 Viimeisen tunnin aikana tulleet postaukset: 0.0MB</p>
-      <p>📜 Käyttäjien tila: 0.1MB</p>
+      <h3>Overview</h3>
+      <p>👤 Users: 1</p>
+      <p>📝 Posts: 0</p>
+      <p>📦 Saved data: 2.3MB</p>
+      <p>💎 Last hour posts: 0.0MB</p>
+      <p>📜 User data: 0.1MB</p>
       <p> </p>
-      <button onclick="stopServer()">🚫 Sulje serverit</button>
-      <button onclick="moveAdmin()">📜 Tarkistele käyttäjien tilaa</button>
+      <button onclick="stopServer()">🚫 Close servers</button>
+      <button onclick="moveAdmin()">📜 Check the status of users</button>
     </div>
 
     <div class="card console">
-      <h3>🖥️ Konsoli</h3>
-      <div class="console-output" id="console-output">> Konsoli valmis vastaanottamaan komentoja...</div>
+      <h3>🖥️ Console</h3>
+      <div class="console-output" id="console-output">> Console ready to take commands...</div>
       <div class="console-input">
-        <input type="text" id="console-input" placeholder="Kirjoita komento ja paina Enter..." />
-        <button onclick="runCommand()">Suorita</button>
+        <input type="text" id="console-input" placeholder="Type command and click enter..." />
+        <button onclick="runCommand()">Enter the command</button>
       </div>
     </div>
   </main>
